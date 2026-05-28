@@ -1,0 +1,41 @@
+# macOS
+.DS_Store
+
+# Editor / OS noise
+.vscode/
+.idea/
+*.swp
+
+# Python (if/when the spike script lands)
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# ────────────────────────────────────────────────────────────────────────────
+# Library content — DO NOT COMMIT
+#
+# The library/ directory holds sensitive material (internal policies, client
+# names in past questionnaires, NDA-gated evidence pointers). Real content
+# is treated as a local draft and never lands in git history.
+#
+# Only the structure (top-level README, per-collection READMEs, and
+# `_example.md` skeleton files) is committed so the schema is reviewable.
+# Everything else under library/ is ignored.
+# ────────────────────────────────────────────────────────────────────────────
+library/**
+!library/README.md
+!library/**/README.md
+!library/**/_example.md
+!library/.gitkeep
+!library/**/.gitkeep
+
+# Generated retrieval index
+library/library.db
+library/library.db-journal
+library/library.db-wal
+library/library.db-shm
+
+# Raw pulled originals (PDFs, Excels, etc.) — never committed
+library/_raw/
